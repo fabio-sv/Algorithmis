@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Algorithmis.iml" filepath="$PROJECT_DIR$/.idea/Algorithmis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AlgorithmisJava/AlgorithmisJava.iml" filepath="$PROJECT_DIR$/AlgorithmisJava/AlgorithmisJava.iml" />
+    </modules>
+  </component>
+</project>
