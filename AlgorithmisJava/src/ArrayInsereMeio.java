@@ -1,4 +1,4 @@
-public class InsercaoLinear {
+public class ArrayInsereMeio {
     public static void main(String[] args) {
 
         int[] scores = {90, 70, 50, 80, 60, 85};

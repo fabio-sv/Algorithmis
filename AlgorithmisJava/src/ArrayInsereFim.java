@@ -1,4 +1,4 @@
-public class ArrayAcrecentar {
+public class ArrayInsereFim {
     public static void main(String[] args) {
 
         //cria um vetor
