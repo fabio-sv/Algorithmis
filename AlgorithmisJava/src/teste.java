@@ -1,29 +1,30 @@
 public class teste {
     public static void main(String[] args) {
-
-        int[] valores  = {1,2,3,4,5,6,7,8};
-
-        valores = remove(0, valores);
-
-        for(int list : valores){
-            System.out.println(list);
-        }
+        int[] vetor = {3,2,1,-1};
+        insert(vetor);
     }
+    static void insert(int[] vetor){
+        for(int i = 1; i < vetor.length; i ++){
+            int index = i;
+            int valorIndex = vetor[i];
 
-    static int[] remove(int index, int[] vetor){
-
-        int[] temp = new int[vetor.length - 1];
-
-        for(int i = 0; i < vetor.length; i ++){
-            if(i < index){
-                temp[i] = vetor[i];
+            for(int j = 0; j < index; j++){
+                int aux =  vetor[j];
+                if (aux > valorIndex){
+                    int temp = vetor[j];
+                    vetor[j] = vetor[index];
+                    vetor[index] = temp;
+                }
             }
-            if(i > index){
-                temp[i - 1] = vetor[i];
-            }
+
+
         }
-        vetor = temp;
 
-        return vetor;
+        for (int l : vetor){
+            System.out.println(l + ",");
+        }
+
+
+
     }
 }
