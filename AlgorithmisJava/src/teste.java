@@ -4,25 +4,25 @@ public class teste {
         insert(vetor);
     }
     static void insert(int[] vetor){
-        for(int i = 1; i < vetor.length; i ++){
-            int index = i;
-            int valorIndex = vetor[i];
 
-            for(int j = 0; j < index; j++){
-                int aux =  vetor[j];
-                if (aux > valorIndex){
+        for(int i = 1; i < vetor.length; i++){
+
+            for (int j = i - 1 ; j >= 0; j--){
+
+                if(vetor[i] < vetor[j]){
                     int temp = vetor[j];
-                    vetor[j] = vetor[index];
-                    vetor[index] = temp;
+                    vetor[j] = vetor[i];
+                    vetor[i] = temp;
+
                 }
             }
 
-
+        }
+        for(int l : vetor){
+            System.out.println(l);
         }
 
-        for (int l : vetor){
-            System.out.println(l + ",");
-        }
+
 
 
 

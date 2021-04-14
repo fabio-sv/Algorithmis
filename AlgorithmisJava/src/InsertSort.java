@@ -6,16 +6,24 @@ public class InsertSort {
         insertSort(scores);
 
     }
-    public static void insertSort(int[] vetor){
 
-        for (int i = 0; i < vetor.length; i++){
-            int indexInsert = vetor[i];
-            int index = i;
+    public static void insertSort(int[] vetor) {
+        for (int i = 1; i < vetor.length; i++) {
+            int indexInsert = i;
 
-            for (int j = 0; i < index; i++){
+            for (int j = 0; j < indexInsert; j++) {
 
-
+                if (vetor[j] > vetor[i]) {
+                    int temp = vetor[j];
+                    vetor[j] = vetor[indexInsert];
+                    vetor[indexInsert] = temp;
+                }
             }
+
+        }
+
+        for (int l : vetor) {
+            System.out.println(l + ",");
         }
 
     }
