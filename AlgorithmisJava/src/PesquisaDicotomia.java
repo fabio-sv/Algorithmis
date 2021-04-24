@@ -3,23 +3,28 @@ public class PesquisaDicotomia {
 
         int[] vetor = {50, 60, 70, 80, 90};
 
-
+        dicotomia(vetor, 60);
     }
-    // valor hdjahdjsahjdhassakdl
-    public static void dicotomia(int[] vetor){
+    public static void dicotomia(int[] vetor, int search){
 
-        int inicio  = vetor[0];
-        int fim = vetor[vetor.length -1];
-        int meio =  (inicio + fim) / 2;
+        int meio = vetor.length / 2;
 
-        for(int i = 0; i < vetor.length; i++){
-            //busca menor
-            if (meio > vetor[i]){
+        if(search < vetor[0] || search > vetor[vetor.length - 1]){
+            System.out.println("o valor " + search + " não existe no vetor.");
+        }
 
+        if(vetor[meio] > vetor[meio - 1]){
+            for(int i = meio; i >= 0; i--){
+                if(vetor[i] == search){
+                    System.out.println("O valor " + search + " está no indice " + i);
+                }
             }
-            //busca maior
-            if(meio < vetor[i]){
-
+        }
+        if(vetor[meio] < vetor[vetor.length - 1] && vetor[meio] != search){
+            for(int i = meio; i < vetor.length; i++){
+                if(vetor[i] == search){
+                    System.out.println("O valor " + search + " está no indice " + i);
+                }
             }
         }
 
