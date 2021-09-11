@@ -1,48 +1,65 @@
+import java.util.Random;
+
 public class QuickSort {
     public static void main(String[] args) {
 
-        int[] x = {1,5,6,7,4,57,84,74};
+        int[] arr = new int[3];
 
-        quickSort(x);
+        arr[0] = 3;
+        arr[1] = 2;
+        arr[2] = 1;
 
-        for (int i : x){
+
+       /* Random random = new Random();
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100);
+        }*/
+
+        quickSort(arr);
+
+        for (int i : arr) {
             System.out.println(i);
         }
-
     }
 
-    public static void quickSort(int[] vetor){
-        quickSort(vetor, 0, vetor.length - 1);
+    private static void quickSort(int[] arr, int inicio, int fim) {
 
-    }
-
-    private static void quickSort(int[] vetor, int inicio, int fim){
-        if(inicio < fim){
-            // realiza a partição
-            int q = particao(vetor, inicio, fim);
-            // ordena a partição esquerda
-            quickSort(vetor, inicio, q -1);
-            // ordena a partição direita
-            quickSort(vetor, q + 1, fim);
+        //verifica se o vetor é valido
+        if (inicio > fim) {
+            return;
         }
-    }
-    private static int particao(int[] vetor, int inicio, int fim){
-        int pivo = vetor[fim];
-        int i = inicio - 1;
+        int i = inicio;
+        int j = fim;
+        int base = arr[inicio];
 
-        for (int j = inicio; j <= fim - 1; j++){
-            if(vetor[j] <= pivo){
-                i = i + 1;
-                swap(vetor, i, j);
+        while (i < j) {
+            //
+            while (i < j && arr[j] > base) {
+                j--;
+            }
+
+            if (i < j) {
+                arr[i++] = arr[j];
+            }
+
+            while (i < j && arr[i] <= base) {
+                i++;
+            }
+
+            if (i < j) {
+                arr[j--] = arr[i];
             }
         }
-        swap(vetor, i + 1, fim);
-        return  i + 1;
-    }
-    private static void swap(int vetor[], int i, int j){
-        int aux = vetor[i];
-        vetor[i] = vetor[j];
-        vetor[j] = aux;
+        arr[i] = base;
+
+        quickSort(arr, inicio, i - 1);
+        quickSort(arr, i + 1, fim);
+
     }
 
+    public static void quickSort(int[] arr) {
+        if (arr.length > 0) {
+            quickSort(arr, 0, arr.length - 1);
+        }
+    }
 }
